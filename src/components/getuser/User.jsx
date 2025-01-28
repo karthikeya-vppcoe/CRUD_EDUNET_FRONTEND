@@ -9,8 +9,8 @@ const User = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "http://localhost:5000/api/getall"
-        // "https://backend-6-bhyd.onrender.com/api/getall"
+        // "http://localhost:5000/api/getall"
+        "https://crud-edunet-backend-zrma.onrender.com/api/getall"
       );
       setUsers(response.data);
     };
@@ -19,7 +19,7 @@ const User = () => {
 
   const deleteUser = async (userId) => {
     await axios
-      .delete(`http://localhost:5000/api/delete/${userId}`)
+      .delete(`https://crud-edunet-backend-zrma.onrender.com/api/delete/${userId}`)
       .then((response) => {
         setUsers((prevUser) => prevUser.filter((user) => user._id !== userId));
       })

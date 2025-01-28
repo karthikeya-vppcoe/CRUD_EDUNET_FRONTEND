@@ -17,7 +17,7 @@ const users={
         setUser({...user,[name]:value});        
     }
     useEffect(()=>{
-        axios.get(`http://localhost:5000/api/getone/${id}`)
+        axios.get(`https://crud-edunet-backend-zrma.onrender.com/api/getone/${id}`)
         .then((response)=>{
             setUser(response.data)
         }).catch((error)=>{
@@ -26,7 +26,7 @@ const users={
     },[id])
     const submitForm=async(e)=>{
         e.preventDefault();
-        await axios.put(`http://localhost:5000/api/update/${id}`,user)
+        await axios.put(`https://crud-edunet-backend-zrma.onrender.com/api/update/${id}`,user)
         .then((response)=>{
             toast.success(response.data.msg,{position:"top-right"})
             navigate("/")
